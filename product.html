@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        :root {
+            --dark-blue: #213555;
+            --medium-blue: #3E5879;
+            --beige: #D8C4B6;
+            --light-beige: #F5EFE7;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--light-beige);
+            color: var(--dark-blue);
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--dark-blue);
+            padding: 10px 20px;
+            color: var(--light-beige);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--light-beige);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: var(--light-beige);
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--beige);
+        }
+
+        /* Form styling */
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: var(--medium-blue);
+            padding: 20px;
+            border-radius: 10px;
+            color: var(--light-beige);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--beige);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .form-group .checkbox-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .form-group button {
+            background-color: var(--beige);
+            color: var(--dark-blue);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .form-group button:hover {
+            background-color: var(--light-beige);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="homepage.html" class="logo">
+            <img src="logo.png">
+            EcoNavigate
+        </a>
+        <div class="nav-links">
+            <a href="contact.html">Contact</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="about.html">About</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <h2>Enter Route and Vehicle Details</h2>
+        <form>
+            <div class="form-group">
+                <label for="start-location">Start Location</label>
+                <input type="text" id="start-location" placeholder="Enter starting location">
+            </div>
+            <div class="form-group">
+                <label for="end-location">End Location</label>
+                <input type="text" id="end-location" placeholder="Enter destination location">
+            </div>
+            <div class="form-group">
+                <label for="vehicle-type">Vehicle Type</label>
+                <select id="vehicle-type">
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="truck">Truck</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fuel-type">Fuel Type</label>
+                <select id="fuel-type">
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fuel-efficiency">Fuel Efficiency (km/l)</label>
+                <input type="number" id="fuel-efficiency" placeholder="Enter fuel efficiency">
+            </div>
+            <div class="form-group">
+                <label for="passenger-count">Passenger Count</label>
+                <input type="number" id="passenger-count" placeholder="Enter passenger count">
+            </div>
+            <div class="form-group">
+                <label for="cargo-weight">Cargo Weight (kg)</label>
+                <input type="number" id="cargo-weight" placeholder="Enter cargo weight">
+            </div>
+            <div class="form-group">
+                <label for="route-type">Preferred Route Type</label>
+                <select id="route-type">
+                    <option value="shortest">Shortest</option>
+                    <option value="fastest">Fastest</option>
+                    <option value="eco-friendly">Eco-Friendly</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Additional Filters</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="avoid-toll"> Avoid Toll Roads</label>
+                    <label><input type="checkbox" id="avoid-highways"> Avoid Highways</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Find Best Route</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
