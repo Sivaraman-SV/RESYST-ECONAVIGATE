@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNavigate - Login</title>
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #213555 0%, #3E5879 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #F5EFE7;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        padding: 3rem;
+    }
+
+    .form-container {
+        background: rgba(245, 239, 231, 0.05);
+        padding: 3rem 4rem;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(33, 53, 85, 0.2);
+    }
+
+    .form-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        color: #F5EFE7;
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.8rem;
+        color: #D8C4B6;
+        font-size: 1.1rem;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #D8C4B6;
+        border-radius: 8px;
+        background: rgba(245, 239, 231, 0.1);
+        color: #F5EFE7;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: #F5EFE7;
+        box-shadow: 0 0 10px rgba(216, 196, 182, 0.3);
+    }
+
+    .form-footer {
+        display: flex;
+        flex-direction: column;  
+        align-items: center;   
+        margin-top: 3rem;
+        gap: 1rem;           
+    }
+
+
+    .signup-link {
+        color: #D8C4B6;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.1rem;
+        align-self: flex-start;
+    }
+
+    .signup-link:hover {
+        color: #F5EFE7;
+    }
+
+    .button {
+        background-color: #D8C4B6;
+        color: #213555;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background-color: #F5EFE7;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(216, 196, 182, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 1.5rem;
+        }
+
+        .form-container {
+            padding: 2rem;
+        }
+
+        .button {
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Login</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form method="POST" action="{{ url_for('login') }}">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-footer">
+                    <a href="{{ url_for('index') }}" class="signup-link">Don't have an account? Sign up here</a>
+                    <button type="submit" class="button">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNavigate - Welcome</title>
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: linear-gradient(135deg, #213555 0%, #3E5879 100%);
+        min-height: 100vh;
+        color: #F5EFE7;
+    }
+
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .company-name {
+        color: #F5EFE7;
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        background-color: #D8C4B6;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .logo::before {
+        content: "E";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #213555;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .button {
+        background-color: #D8C4B6;
+        color: #213555;
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background-color: #F5EFE7;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(216, 196, 182, 0.3);
+    }
+
+    .form-container {
+        background: rgba(245, 239, 231, 0.05);
+        padding: 2rem;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(33, 53, 85, 0.2);
+    }
+
+    .form-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #F5EFE7;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #D8C4B6;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #D8C4B6;
+        border-radius: 5px;
+        background: rgba(245, 239, 231, 0.1);
+        color: #F5EFE7;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: #F5EFE7;
+        box-shadow: 0 0 10px rgba(216, 196, 182, 0.3);
+    }
+
+    .form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .login-link {
+        color: #D8C4B6;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .login-link:hover {
+        color: #F5EFE7;
+    }
+
+    @media (max-width: 768px) {
+        .company-name {
+            font-size: 2.5rem;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo::before {
+            font-size: 1.5rem;
+        }
+
+        .button {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+        }
+
+        .container {
+            padding: 1rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="landing">
+        <div class="container">
+            <div class="logo-container">
+                <h1 class="company-name">EcoNavigate</h1>
+                <div class="logo"></div>
+            </div>
+            <a href="#signup" class="button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="signup">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Sign Up</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                    <div class="form-footer">
+                        <a href="login.html" class="login-link">Already have an account? Login here</a>
+                        <button type="submit" class="button">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
